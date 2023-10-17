@@ -1,14 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import Crud from './paginas/crud';
+import Home from './paginas/home';
+import Cientifica from './paginas/cientifica';
 import Posts from './paginas/jsonApi';
 
 function App() {
   return (
     <div className="App">
-      <header className="bg-blue-600 p-4 text-white">
-        <h1 className="text-2xl font-semibold">Aplicación JSONPlaceholder</h1>
-      </header>
-      <Posts/>
+      <>
+      <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/crud" element={<Crud />} />
+          <Route path="/cientifica" element={<Cientifica />} /> 
+          <Route path="/jsonApi" element={<Posts />} />
+        </Routes>
+      </div>
+    </Router>
+      </>
+
     </div>
   );
 }
