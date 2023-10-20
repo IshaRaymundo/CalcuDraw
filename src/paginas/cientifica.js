@@ -8,28 +8,42 @@ function Cientifica() {
   const [output, setOutput] = useState('');
 
   const handleButtonClick = (value) => {
-    if (value === '=') {
-      try {
-        const result = math.evaluate(input);
-        setOutput(result.toString());
-      } catch (error) {
-        setOutput('Error');
-      }
-    } else if (value === 'C') {
-      setInput('');
-      setOutput('');
-    } else {
-      setInput(input + value);
+    switch (value) {
+      case '=':
+        try {
+          const result = math.evaluate(input);
+          setOutput(result.toString());
+        } catch (error) {
+          setOutput('Error');
+        }
+        break;
+      case 'C':
+        setInput('');
+        setOutput('');
+        break;
+      case 'sqrt':
+        setInput(`sqrt(${input})`);
+        break;
+      case '^':
+        setInput(`${input}^`);
+        break;
+      case 'sin':
+        setInput(`sin(${input})`);
+        break;
+      default:
+        setInput(input + value);
     }
   };
 
   const buttons = [
+    '(', ')', 'sqrt', '^',
+    'sin', 'cos', 'tan', 'ln',
+    'log', 'exp', 'pi', 'e',
     '7', '8', '9', '+',
     '4', '5', '6', '-',
     '1', '2', '3', '*',
-    'C', '0', '=', '/'
+    'C', '0', '=', '/',
   ];
-
   return (
     <div className="bg-[#358ed3] min-h-screen">
       <header className="bg-blue-900 text-white p-4">
