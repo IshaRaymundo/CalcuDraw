@@ -1,19 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-
+const linkStyle = {
+  textDecoration: "none",
+  textTransform: "uppercase",
+};
 
 function Navbar() {
   return (
-    <nav className="bg-white p-4 shadow-md flex items-center justify-between">
-      <Link to="/">
-        <div className="flex items-center">
-          <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deviantart.com%2Fcriticl%2Fart%2FRandom-Logo-448008908&psig=AOvVaw2YuZfMMx2v9ynquIXm0cKr&ust=1697592790705000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIDv4Yr4-4EDFQAAAAAdAAAAABAh" alt="Logo" className="w-8 h-8 mr-2" />
-          <span className="text-xl font-semibold">Mi Aplicación</span>
-        </div>
-      </Link>
-      <Link to="/jsonApi" className="ml-4">JSON API</Link>
-      <Link to="/CalculadoraMatematica" className="ml-4">Calculadora Matematica</Link> 
+    <nav className="bg-white p-2 shadow-md">
+      <div className="text-center">
+        <Link to="/">
+          <img
+            src="https://media.istockphoto.com/id/1151590596/es/vector/icono-de-calculadora.jpg?s=612x612&w=0&k=20&c=nJ1JKLiL3T6D1Jcb-Ij8MOho0R_FFpoRpei2CokcH6c="
+            alt="CalcuDraw"
+            className="w-8 h-8 mx-auto mb-1"
+          />
+          <p className="bg-white text-[#358ed3] text-lg font-bold inline-block mt-1">CalcuDraw</p>
+        </Link>
+      </div>
+      <div className="mt-1 text-center font-semibold">
+        <Link
+          to="/cientifica"
+          style={linkStyle}
+          className="inline-block text-sm">
+          Calculadora Matemática
+        </Link>
+        <span className="ml-4"></span>
+        <Link
+          to="/jsonApi"
+          style={linkStyle}
+          className="inline-block text-sm">
+          JSON API
+        </Link>
+        <span className="ml-4"></span>
+        <Link
+          to="/crud"
+          style={linkStyle}
+          className="inline-block text-sm">
+          CRUD
+        </Link>
+      </div>
     </nav>
   );
 }

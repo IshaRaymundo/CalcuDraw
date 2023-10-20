@@ -9,11 +9,17 @@ import Home from './paginas/home';
 import Cientifica from './paginas/cientifica';
 import Posts from './paginas/jsonApi';
 
+import Navbar from './componentes/navbar';
+import Footer from './componentes/footer';
+
+
 function App() {
   return (
     <div className="App">
       <>
       <Router>
+      <Navbar />
+
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,6 +28,10 @@ function App() {
           <Route path="/jsonApi" element={<Posts />} />
         </Routes>
       </div>
+
+      
+      <Footer />
+
     </Router>
       </>
 
@@ -30,3 +40,5 @@ function App() {
 }
 
 export default App;
+
+
