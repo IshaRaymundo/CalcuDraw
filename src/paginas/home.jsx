@@ -5,15 +5,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Home() {
   const cardData = [
     {
-      image: "./img/img2.jpeg",
+      image: "./img/img2.png",
       customText: "CALCULADORA CIENTIFICA",
     },
     {
-      image: "./img/img1.jpeg",
+      image: "./img/img1.png",
       customText: "CALCULADORA DE DIVISAS",
     },
     {
-      image: "./img/img3.jpeg",
+      image: "./img/img3.png",
       customText: "CALCULADORA DE MEDIDAS",
     },
   ];
