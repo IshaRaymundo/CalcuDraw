@@ -31,9 +31,9 @@ function Cientifica() {
   ];
 
   return (
-    <div className="bg-blue-300 min-h-screen">
-      <header className="bg-blue-500 text-white p-4">
-        <h1 className="text-2xl font-semibold">Calculadora Matemática</h1>
+    <div className="bg-[#358ed3] min-h-screen">
+      <header className="bg-blue-900 text-white p-4">
+        <h1 className="text-2xl font-semibold text-center">CALCULADORA MATEMÁTICA</h1>
       </header>
       <div className="container mx-auto mt-5">
         <div className="flex">

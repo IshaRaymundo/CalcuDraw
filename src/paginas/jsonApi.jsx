@@ -32,7 +32,7 @@ function Posts() {
 
   return (
     <div className="max-w-screen-md mx-auto">
-      <h1 className="text-2xl font-semibold text-center mb-4">Lista de Publicaciones</h1>
+      <h1 className="text-2xl font-semibold text-center mb-4">PUBLICACIONES</h1>
       {posts.map((post) => (
         <div key={post.id} className="bg-white p-4 my-4 shadow">
           <h2 className="text-lg font-semibold">{post.title}</h2>

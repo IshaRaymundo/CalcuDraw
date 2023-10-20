@@ -49,7 +49,7 @@ function Crud() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4 text-center">CRUD de Usuarios</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">CRUD DE USUARIOS</h1>
       <div className="mb-4">
         {editing ? (
           <div className="bg-blue-100 p-4 rounded-lg">

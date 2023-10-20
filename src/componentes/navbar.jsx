@@ -14,7 +14,7 @@ function Navbar() {
           <img
             src="https://media.istockphoto.com/id/1151590596/es/vector/icono-de-calculadora.jpg?s=612x612&w=0&k=20&c=nJ1JKLiL3T6D1Jcb-Ij8MOho0R_FFpoRpei2CokcH6c="
             alt="CalcuDraw"
-            className="w-8 h-8 mx-auto mb-1"
+            className="logo w-16 h-16 mx-auto mb-2"
           />
           <p className="bg-white text-[#358ed3] text-lg font-bold inline-block mt-1">CalcuDraw</p>
         </Link>
