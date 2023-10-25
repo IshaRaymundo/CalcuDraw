@@ -26,6 +26,12 @@ function Navbar() {
           className="inline-block text-sm">
           Calculadora Matemática
         </Link>
+        <Link
+          to="/divisas"
+          style={linkStyle}
+          className="inline-block text-sm">
+          Calculadora de Divisas
+        </Link>
         <span className="ml-4"></span>
         <Link
           to="/jsonApi"

@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Crud from './paginas/crud';
 import Home from './paginas/home';
 import Cientifica from './paginas/cientifica';
+import Divisas from './paginas/divisas';
 import Posts from './paginas/jsonApi';
 
 import Navbar from './componentes/navbar';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/crud" element={<Crud />} />
           <Route path="/cientifica" element={<Cientifica />} /> 
+          <Route path="/divisas" element={<Divisas />} /> 
           <Route path="/jsonApi" element={<Posts />} />
         </Routes>
       </div>
