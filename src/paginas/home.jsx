@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,7 @@ function Home() {
     {
       image: "./img/img1.png",
       customText: "CALCULADORA DE DIVISAS",
-      route: "/calculadora-divisas",
+      route: "/divisas",
     },
     {
       image: "./img/img3.png",
@@ -24,17 +24,13 @@ function Home() {
 
   return (
     <div className="bg-[#358ed3] min-h-screen">
-      <header className="bg-blue-900 text-white p-4">
-        <h1 className="text-2xl font-semibold text-center">PÁGINA DE INICIO</h1>
-      </header>
-
       <br></br>
 
       <div className="text-center text-white">
-        <h1 className="text-4xl font-bold mb-4">¡BIENVENIDO A CALCUDRAW!</h1>
+        <h1 className="text-4xl font-bold mb-4 mt-5">¡BIENVENIDO A CALCUDRAW!</h1>
         <p className="text-xl">
-          ¡DESCUBRE LA MAGIA DE LOS NÚMEROS! ELIGE UNA CALCULADORA Y HAZ LAS
-          MATEMÁTICAS DIVERTIDAS!
+          ¡Descubre la magia de los números! Elige una calculadora y haz las
+          matemáticas divertidas!
         </p>
       </div>
 
@@ -47,7 +43,7 @@ function Home() {
                 {/* Enlace a la ruta correspondiente */}
                 <Card
                   className="m-2"
-                  style={{ width: "18rem", borderRadius: "15px" }}
+                  style={{ width: "14rem", borderRadius: "15px" }}
                 >
                   <Card.Body>
                     <Card.Img variant="top" src={card.image} />
@@ -63,48 +59,20 @@ function Home() {
 
         <br></br>
 
-        <div className="flex justify-center flex-wrap">
-          {/* Tres cards sin imagen */}
-          <Card
-            className="m-2"
-            style={{ width: "18rem", borderRadius: "100px" }}
-          >
-            <Card.Body>
-              <Card.Text>
-                <div className="text-center mt-3">
-                  <p className="text-primary font-bold">FORMULARIOS</p>
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card
-            className="m-2"
-            style={{ width: "18rem", borderRadius: "100px" }}
-          >
-            <Card.Body>
-              <Card.Text>
-                <div className="text-center mt-3">
-                  <p className="text-primary font-bold">DIBUJO</p>
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card
-            className="m-2"
-            style={{ width: "18rem", borderRadius: "100px" }}
-          >
-            <Card.Body>
-              <Card.Text>
-                <div className="text-center mt-3">
-                  <p className="text-primary font-bold">NOTAS</p>
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
+        <div className="flex justify-center">
+          <Button variant="light" className="m-2 rounded-pill" as={Link} to="/formulario">
+            <span className="text-primary font-bold">Formulario</span>
+          </Button>
+          <Button variant="light" className="m-2 rounded-pill" as={Link} to="/dibujo">
+            <span className="text-primary font-bold">Dibujo</span>
+          </Button>
+          <Button variant="light" className="m-2 rounded-pill" as={Link} to="/notas">
+            <span className="text-primary font-bold">Notas</span>
+          </Button>
         </div>
       </div>
     </div>
-  );
+  );  
 }
 
 export default Home;
