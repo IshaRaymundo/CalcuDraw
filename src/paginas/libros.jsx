@@ -35,7 +35,7 @@ const Libros = () => {
             <div key={index} className="col mb-4">
               <div className="card">
                 <img
-                  src="https://th.bing.com/th/id/OIP.ZlP48UINATqUGH7awm0jXAHaHa?rs=1&pid=ImgDetMain"
+                  src="https://static.vecteezy.com/system/resources/previews/009/445/226/non_2x/cartoon-image-of-an-open-book-or-textbook-with-a-bookmark-back-to-school-sticker-kids-learning-and-educational-hobby-reading-free-vector.jpg"
                   alt={item.title}
                   className="card-img-top"
                 />
@@ -47,7 +47,7 @@ const Libros = () => {
                     rel="noopener noreferrer"
                     className="btn btn-primary"
                   >
-                    Ver en Internet Archive
+                    Ver más
                   </a>
                 </div>
               </div>
