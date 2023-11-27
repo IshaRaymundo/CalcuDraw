@@ -53,8 +53,8 @@ const Pizarra = () => {
 
         <CanvasDraw
           ref={canvasRef}
-          canvasWidth={1500} // Modifica el ancho del lienzo
-          canvasHeight={550} // Modifica la altura del lienzo
+          canvasWidth={1400} // Modifica el ancho del lienzo
+          canvasHeight={470} // Modifica la altura del lienzo
           brushColor={brushColor}
           brushRadius={brushRadius}
         />
