@@ -43,9 +43,7 @@ const YoutubeRepository = () => {
   return (
     <>
       <header className="bg-blue-900 text-white p-4">
-        <h1 className="text-2xl font-semibold text-center">
-          TUTORIALES
-        </h1>
+        <h1 className="text-2xl font-semibold text-center">TUTORIALES</h1>
       </header>
       <div className="container mx-auto my-8">
         <div className="flex justify-center mb-4">
@@ -86,13 +84,13 @@ const YoutubeRepository = () => {
         <div className="flex justify-center mb-4">
           <button
             onClick={previousVideo}
-            className="mx-2 px-4 py-2 bg-[#bb2d3b] text-white rounded-md hover:bg-[#b70101] focus:outline-none focus:bg-blue-600"
+            className="mx-2 px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-blue-600"
           >
             Anterior
           </button>
           <button
             onClick={nextVideo}
-            className="mx-2 px-4 py-2 bg-[#5eb30d] text-white rounded-md hover:bg-[#0f9a33] focus:outline-none focus:bg-blue-600"
+            className="mx-2 px-4 py-2 bg-gray-300 text-gray-600 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-blue-600"
           >
             Siguiente
           </button>

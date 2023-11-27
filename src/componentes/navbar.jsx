@@ -27,6 +27,9 @@ function Navbar() {
         <Link to="/medidas" style={linkStyle} className="text-sm mx-4">
           Medidas
         </Link>
+        <Link to="/tutorials" style={linkStyle} className="text-sm mx-4">
+          Tutoriales
+        </Link>
         <Link to="/libros" style={linkStyle} className="text-sm mx-4">
           Libros
         </Link>

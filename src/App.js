@@ -16,6 +16,7 @@ import Libros from './paginas/libros';
 import YoutubeRepository from './paginas/tutorials'
 import Medidas from './paginas/medidas';
 import Notas from './paginas/notas';
+import AcercaDe from './paginas/acercaDe';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/tutorials" element={<YoutubeRepository />} />
           <Route path="/medidas" element={<Medidas/>} />
           <Route path="/notas" element={<Notas/>} />
+          <Route path="/acercade" element={<AcercaDe/>} />
         </Routes>
       </div>
 

@@ -27,15 +27,14 @@ const CommentsApp = () => {
   };
 
   return (
-    <div className="" >
+    <div className="bg-light" style={{ minHeight: "100vh" }}>
       <div className="container mt-4">
-        <h1 className="mb-4 text-center">Comentarios de Usuarios</h1>
-        <p className="text-center">
-          Bienvenido/a a nuestra aplicación. A continuación, te mostramos las
-          opiniones de otros usuarios acerca de la aplicación.
+        <h1 className="mb-4 text-center text-primary display-4">Comentarios de Usuarios</h1>
+        <p className="text-center text-secondary lead">
+          ¡Bienvenido/a a nuestra aplicación! Aquí tienes algunas opiniones de otros usuarios sobre la aplicación.
         </p>
         {comments.slice(0, visibleComments).map((comment) => (
-          <Card key={comment.id} className="mb-3">
+          <Card key={comment.id} className="mb-3 shadow-lg">
             <div style={{ display: "flex" }}>
               <Card.Img
                 variant="top"
