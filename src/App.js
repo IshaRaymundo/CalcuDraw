@@ -13,6 +13,7 @@ import Footer from './componentes/footer';
 import Pizarra from './paginas/Pizarra';
 import CommentsApp from './paginas/jsonApi';
 import Libros from './paginas/libros';
+import YoutubeRepository from './paginas/tutorials'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/pizarra" element={<Pizarra />} />
           <Route path="/jsonApi" element={<CommentsApp />} />
           <Route path="/libros" element={<Libros />} />
+          <Route path="/tutorials" element={<YoutubeRepository />} />
 
         </Routes>
       </div>

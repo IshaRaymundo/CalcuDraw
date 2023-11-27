@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaExchangeAlt } from "react-icons/fa"; // Utilizamos FaExchangeAlt en lugar de FaSyncAlt
 
+
 const Divisas = () => {
   const [exchangeRates, setExchangeRates] = useState({});
   const [amount, setAmount] = useState(1);
