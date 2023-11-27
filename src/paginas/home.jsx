@@ -61,13 +61,13 @@ function Home() {
 
         <div className="flex justify-center">
           <Button variant="light" className="m-2 rounded-pill" as={Link} to="/formulario">
-            <span className="text-primary font-bold">Formulario</span>
+            <span className="text-primary font-bold">FORMULARIOS</span>
           </Button>
-          <Button variant="light" className="m-2 rounded-pill" as={Link} to="/dibujo">
-            <span className="text-primary font-bold">Dibujo</span>
+          <Button variant="light" className="m-2 rounded-pill" as={Link} to="/pizarra">
+            <span className="text-primary font-bold">DIBUJO</span>
           </Button>
           <Button variant="light" className="m-2 rounded-pill" as={Link} to="/notas">
-            <span className="text-primary font-bold">Notas</span>
+            <span className="text-primary font-bold">NOTAS</span>
           </Button>
         </div>
       </div>

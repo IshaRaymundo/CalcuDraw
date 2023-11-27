@@ -12,6 +12,7 @@ import Posts from './paginas/jsonApi';
 
 import Navbar from './componentes/navbar';
 import Footer from './componentes/footer';
+import Pizarra from './paginas/Pizarra';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/crud" element={<Crud />} />
           <Route path="/cientifica" element={<Cientifica />} /> 
           <Route path="/divisas" element={<Divisas />} /> 
+          <Route path="/pizarra" element={<Pizarra />} />
           <Route path="/jsonApi" element={<Posts />} />
         </Routes>
       </div>
