@@ -1,60 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, Button } from "react-bootstrap";
 
-function Posts() {
-  const [posts, setPosts] = useState([]);
+const CommentsApp = () => {
+  const [comments, setComments] = useState([]);
+  const [visibleComments, setVisibleComments] = useState(5);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(async (response) => {
-        const postsData = response.data;
-
-        const postsWithCommentsAndPhotos = await Promise.all(
-          postsData.map(async (post) => {
-            const [commentsResponse, photosResponse] = await Promise.all([
-              axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${post.id}`),
-              axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=${post.id}`),
-            ]);
-
-            const comments = commentsResponse.data || [];
-            const photos = photosResponse.data || [];
-
-            return { ...post, comments, photos };
-          })
+    const fetchComments = async () => {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/comments"
         );
+        const data = await response.json();
+        setComments(data);
+      } catch (error) {
+        console.error("Error fetching comments:", error);
+      }
+    };
 
-        setPosts(postsWithCommentsAndPhotos);
-      })
-      .catch((error) => {
-        console.error('Error al obtener publicaciones: ', error);
-      });
+    fetchComments();
   }, []);
 
+  const loadMoreComments = () => {
+    setVisibleComments((prevVisibleComments) => prevVisibleComments + 5);
+  };
+
   return (
-    <div className="max-w-screen-md mx-auto">
-      <h1 className="text-2xl font-semibold text-center mb-4">PUBLICACIONES</h1>
-      {posts.map((post) => (
-        <div key={post.id} className="bg-white p-4 my-4 shadow">
-          <h2 className="text-lg font-semibold">{post.title}</h2>
-          <p>{post.body}</p>
-          <h3 className="text-lg font-semibold mt-4">Comentarios:</h3>
-          <ul>
-            {post.comments.map((comment) => (
-              <li key={comment.id}>{comment.body}</li>
-            ))}
-          </ul>
-          <h3 className="text-lg font-semibold mt-4">Fotos:</h3>
-          <div className="flex flex-wrap">
-            {post.photos.map((photo) => (
-              <div key={photo.id} className="w-1/4 p-2">
-                <img src={photo.thumbnailUrl} alt={photo.title} />
-              </div>
-            ))}
+    <div className="" style={{ backgroundColor: "#f0f0f0" }}>
+      <div className="container mt-4">
+        <h1 className="mb-4 text-center">Comentarios de Usuarios</h1>
+        <p className="text-center">
+          Bienvenido/a a nuestra aplicación. A continuación, te mostramos las
+          opiniones de otros usuarios acerca de la aplicación.
+        </p>
+        {comments.slice(0, visibleComments).map((comment) => (
+          <Card key={comment.id} className="mb-3">
+            <div style={{ display: "flex" }}>
+              <Card.Img
+                variant="top"
+                src="https://objetivoligar.com/wp-content/uploads/2017/03/blank-profile-picture-973460_1280.jpg"
+                alt="Foto de perfil"
+                style={{ width: "50px", height: "100%", objectFit: "cover" }}
+              />
+              <Card.Body>
+                <Card.Subtitle className="text-muted">
+                  Usuario: {comment.email}
+                </Card.Subtitle>
+                <Card.Title>{comment.name}</Card.Title>
+                <Card.Text>{comment.body}</Card.Text>
+              </Card.Body>
+            </div>
+          </Card>
+        ))}
+        {visibleComments < comments.length && (
+          <div className="d-flex justify-content-center mt-3 mb-4">
+            <Button variant="primary" onClick={loadMoreComments}>
+              Ver más
+            </Button>
           </div>
-        </div>
-      ))}
+        )}
+      </div>
     </div>
   );
-}
+};
 
-export default Posts;
+export default CommentsApp;

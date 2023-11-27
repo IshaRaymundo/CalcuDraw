@@ -8,11 +8,11 @@ import Crud from './paginas/crud';
 import Home from './paginas/home';
 import Cientifica from './paginas/cientifica';
 import Divisas from './paginas/divisas';
-import Posts from './paginas/jsonApi';
-
 import Navbar from './componentes/navbar';
 import Footer from './componentes/footer';
 import Pizarra from './paginas/Pizarra';
+import CommentsApp from './paginas/jsonApi';
+import Libros from './paginas/libros';
 
 
 function App() {
@@ -29,7 +29,9 @@ function App() {
           <Route path="/cientifica" element={<Cientifica />} /> 
           <Route path="/divisas" element={<Divisas />} /> 
           <Route path="/pizarra" element={<Pizarra />} />
-          <Route path="/jsonApi" element={<Posts />} />
+          <Route path="/jsonApi" element={<CommentsApp />} />
+          <Route path="/libros" element={<Libros />} />
+
         </Routes>
       </div>
 

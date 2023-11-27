@@ -45,7 +45,7 @@ function Cientifica() {
     'C', '0', '=', '/',
   ];
   return (
-    <div className="bg-[#358ed3] min-h-screen">
+    <div className="bg-[#f7f7f8] min-h-screen">
       <header className="bg-blue-900 text-white p-4">
         <h1 className="text-2xl font-semibold text-center">CALCULADORA MATEMÁTICA</h1>
       </header>
