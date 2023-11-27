@@ -5,7 +5,7 @@ const Pizarra = () => {
   const canvasRef = useRef(null);
   const [brushColor, setBrushColor] = useState("#000");
   const [brushRadius, setBrushRadius] = useState(4);
-  
+
   const clearCanvas = () => {
     canvasRef.current.clear();
   };
@@ -14,11 +14,17 @@ const Pizarra = () => {
     <div className="flex justify-center items-center h-screen bg-gray-200">
       <div className="pizarra-container p-4 border-4 border-[#358ed3] rounded-lg shadow-lg">
         <div>
-          <h1>¡REALIZA TUS APUNTES AQUÍ!</h1>
+          <h1 className="text-[#358ed3]">¡REALIZA TUS APUNTES AQUÍ!</h1>
         </div>
-        <div className="flex justify-between mb-4"> {/* Modificado */}
-          <div className="flex items-center"> {/* Modificado */}
-            <label htmlFor="colorPicker" className="mr-1">COLOR:</label>
+        <div className="flex justify-between mb-4">
+          {" "}
+          {/* Modificado */}
+          <div className="flex items-center">
+            {" "}
+            {/* Modificado */}
+            <label htmlFor="colorPicker" className="mr-1 font-bold text-[#358ed3]">
+              COLOR:
+            </label>
             <input
               id="colorPicker"
               type="color"
@@ -27,9 +33,12 @@ const Pizarra = () => {
               className="p-1 rounded-md border border-gray-300"
             />
           </div>
-  
-          <div className="flex items-center"> {/* Modificado */}
-            <label htmlFor="brushSize" className="mr-1">TAMAÑO:</label>
+          <div className="flex items-center">
+            {" "}
+            {/* Modificado */}
+            <label htmlFor="brushSize" className="mr-1 font-bold text-[#358ed3]">
+              TAMAÑO:
+            </label>
             <input
               id="brushSize"
               type="number"
@@ -49,8 +58,11 @@ const Pizarra = () => {
           brushColor={brushColor}
           brushRadius={brushRadius}
         />
-  
-        <button onClick={clearCanvas} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+
+        <button
+          onClick={clearCanvas}
+          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+        >
           LIMPIAR
         </button>
       </div>
