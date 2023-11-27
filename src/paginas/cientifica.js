@@ -89,9 +89,6 @@ function Cientifica() {
           </div>
         </div>
       </div>
-      <div className="text-center p-4">
-        <Link to="/formularios" className="btn btn-primary">Formularios</Link>
-      </div>
     </div>
   );
 }

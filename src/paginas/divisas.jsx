@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaExchangeAlt } from "react-icons/fa"; // Utilizamos FaExchangeAlt en lugar de FaSyncAlt
 
-
 const Divisas = () => {
   const [exchangeRates, setExchangeRates] = useState({});
   const [amount, setAmount] = useState(1);
@@ -56,56 +55,65 @@ const Divisas = () => {
           CALCULADORA DE DIVISAS
         </h1>
       </header>
-      <div className="bg-neutral-100 flex flex-col h-screen items-center text-center"> {/* Cambiamos min-h-screen a h-screen */}
-        <br></br>
-        <div className="my-6">
-          <label className="text-blue-900 text-2xl my-2 font-bold">IMPORTE:</label>
-          <input
-            type="number"
-            className="form-control form-control-lg"
-            value={amount}
-            onChange={handleAmountChange}
-            style={{ width: "400px" }}
-          />
-        </div>
 
-        <div className="flex items-center my-4">
-          <select
-            className="form-select form-select-lg"
-            value={fromCurrency}
-            onChange={handleFromCurrencyChange}
-          >
-            {Object.keys(exchangeRates).map((currency) => (
-              <option key={currency} value={currency}>
-                {currency}
-              </option>
-            ))}
-          </select>
-
-          <button className="mx-2 bg-white text-gray-500 font-bold border-gray-500 rounded-full p-2" onClick={handleSwapCurrencies}>
-            <FaExchangeAlt />
-          </button>
-
-          <select
-            className="form-select form-select-lg"
-            value={toCurrency}
-            onChange={handleToCurrencyChange}
-          >
-            {Object.keys(exchangeRates).map((currency) => (
-              <option key={currency} value={currency}>
-                {currency}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="mt-3 text-center">
-          <h3 className="text-blue-900">
-            <span className="text-2xl my-2 font-bold">RESULTADO</span>
-            <div className="bg-white rounded p-4 shadow-lg my-2 text-blue-900">
-              {convertedAmount} {toCurrency}
+      <div className="container mt-4 mb-4">
+        <div className="card p-4" style={{ backgroundColor: "#f8f9fa", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
+          <div className="card-body">
+            <div className="text-center">
+              <label className="text-primary text-2xl my-2 font-bold">
+                IMPORTE:
+              </label>
+              <input
+                type="number"
+                className="form-control form-control-lg text-center"
+                value={amount}
+                onChange={handleAmountChange}
+                style={{ width: "400px", margin: "0 auto" }}
+              />
             </div>
-          </h3>
+
+            <div className="flex items-center my-4">
+              <select
+                className="form-select form-select-lg"
+                value={fromCurrency}
+                onChange={handleFromCurrencyChange}
+              >
+                {Object.keys(exchangeRates).map((currency) => (
+                  <option key={currency} value={currency}>
+                    {currency}
+                  </option>
+                ))}
+              </select>
+
+              <button
+                className="mx-2 bg-white text-gray-500 font-bold border-gray-500 rounded-full p-2"
+                onClick={handleSwapCurrencies}
+              >
+                <FaExchangeAlt />
+              </button>
+
+              <select
+                className="form-select form-select-lg"
+                value={toCurrency}
+                onChange={handleToCurrencyChange}
+              >
+                {Object.keys(exchangeRates).map((currency) => (
+                  <option key={currency} value={currency}>
+                    {currency}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="mt-3 text-center">
+              <h3 className="text-primary">
+                <span className="text-2xl my-2 font-bold">RESULTADO</span>
+                <div className="bg-white rounded p-4 shadow-lg my-2 text-primary">
+                  {convertedAmount} {toCurrency}
+                </div>
+              </h3>
+            </div>
+          </div>
         </div>
       </div>
     </>

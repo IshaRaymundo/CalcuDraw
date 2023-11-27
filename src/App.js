@@ -14,6 +14,8 @@ import Pizarra from './paginas/Pizarra';
 import CommentsApp from './paginas/jsonApi';
 import Libros from './paginas/libros';
 import YoutubeRepository from './paginas/tutorials'
+import Medidas from './paginas/medidas';
+import Notas from './paginas/notas';
 
 
 function App() {
@@ -33,7 +35,8 @@ function App() {
           <Route path="/jsonApi" element={<CommentsApp />} />
           <Route path="/libros" element={<Libros />} />
           <Route path="/tutorials" element={<YoutubeRepository />} />
-
+          <Route path="/medidas" element={<Medidas/>} />
+          <Route path="/notas" element={<Notas/>} />
         </Routes>
       </div>
 

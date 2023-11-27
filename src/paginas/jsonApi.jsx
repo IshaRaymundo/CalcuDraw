@@ -27,7 +27,7 @@ const CommentsApp = () => {
   };
 
   return (
-    <div className="" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="" >
       <div className="container mt-4">
         <h1 className="mb-4 text-center">Comentarios de Usuarios</h1>
         <p className="text-center">

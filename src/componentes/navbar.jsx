@@ -24,6 +24,9 @@ function Navbar() {
         <Link to="/divisas" style={linkStyle} className="text-sm mx-4">
           Divisas
         </Link>
+        <Link to="/medidas" style={linkStyle} className="text-sm mx-4">
+          Medidas
+        </Link>
         <Link to="/libros" style={linkStyle} className="text-sm mx-4">
           Libros
         </Link>

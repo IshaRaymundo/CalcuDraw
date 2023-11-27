@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
@@ -18,9 +18,21 @@ function Home() {
     {
       image: "./img/img3.png",
       customText: "CALCULADORA DE MEDIDAS",
-      route: "/calculadora-medidas",
+      route: "/medidas",
     },
   ];
+
+  const [showModal, setShowModal] = useState(false);
+  const [formularioImage, setFormularioImage] = useState(null);
+
+  const handleFormularioClick = () => {
+    setFormularioImage("https://cdn-v1.udocz-assets.com/uploads/book/cover/287548/287548.jpg");
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="bg-[#358ed3] min-h-screen">
@@ -39,9 +51,7 @@ function Home() {
           {cardData.map((card, index) => (
             <div key={index}>
               <Link to={card.route}>
-                {" "}
-                {/* Enlace a la ruta correspondiente */}
-                <Card
+              <Card
                   className="m-2"
                   style={{ width: "14rem", borderRadius: "15px" }}
                 >
@@ -60,8 +70,11 @@ function Home() {
         <br></br>
 
         <div className="flex justify-center">
-          <Button variant="light" className="m-2 rounded-pill" as={Link} to="/??">
-            <span className="text-primary font-bold">FORMULARIOS</span>
+        <Button
+            variant="light"
+            className="m-2 rounded-pill"
+            onClick={handleFormularioClick}
+          >            <span className="text-primary font-bold">FORMULARIOS</span>
           </Button>
           <Button variant="light" className="m-2 rounded-pill" as={Link} to="/tutorials">
             <span className="text-primary font-bold">TUTORIALES</span>
@@ -73,6 +86,20 @@ function Home() {
             <span className="text-primary font-bold">NOTAS</span>
           </Button>
         </div>
+        <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Imagen del formulario</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {formularioImage && (
+              <img
+                src={formularioImage}
+                alt="Formulario"
+                style={{ maxWidth: "100%" }}
+              />
+            )}
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   );  
