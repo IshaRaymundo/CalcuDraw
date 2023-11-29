@@ -1,4 +1,6 @@
 import React from "react";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+
 
 function Footer() {
   return (
@@ -45,29 +47,29 @@ function Footer() {
 
         <div className="text-center md:text-left">
           <h3 className="text-2xl font-bold mb-4">Redes Sociales</h3>
-          <ul className="flex flex-row gap-4">
-            <li>
+          <ul className="flex flex-row gap-4 justify-center md:justify-start">
+            <li className="flex flex-col items-center">
               <p>Facebook</p>
-              <a href="#" className="no-underline">
-                <i className="fab fa-facebook text-2xl"></i>
+              <a href="https://www.facebook.com/" className="no-underline">
+                <FaFacebook className="text-3xl" />
               </a>
             </li>
-            <li>
+            <li className="flex flex-col items-center">
               <p>Instagram</p>
-              <a href="#" className="no-underline">
-                <i className="fab fa-instagram text-2xl"></i>
+              <a href="https://www.instagram.com/" className="no-underline">
+                <FaInstagram className="text-3xl" />
               </a>
             </li>
-            <li>
+            <li className="flex flex-col items-center">
               <p>Twitter</p>
-              <a href="#" className="no-underline">
-                <i className="fab fa-twitter text-2xl"></i>
+              <a href="https://twitter.com/" className="no-underline">
+                <FaTwitter className="text-3xl" />
               </a>
             </li>
-            <li>
+            <li className="flex flex-col items-center">
               <p>YouTube</p>
-              <a href="#" className="no-underline">
-                <i className="fab fa-tiktok text-2xl"></i>
+              <a href="https://www.youtube.com/" className="no-underline">
+                <FaYoutube className="text-3xl" />
               </a>
             </li>
           </ul>
