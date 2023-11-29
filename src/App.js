@@ -17,6 +17,9 @@ import YoutubeRepository from './paginas/tutorials'
 import Medidas from './paginas/medidas';
 import Notas from './paginas/notas';
 import AcercaDe from './paginas/acercaDe';
+import Login from './paginas/login';
+import LoginForm from './paginas/login';
+import Registro from './paginas/registro';
 
 
 function App() {
@@ -39,6 +42,8 @@ function App() {
           <Route path="/medidas" element={<Medidas/>} />
           <Route path="/notas" element={<Notas/>} />
           <Route path="/acercade" element={<AcercaDe/>} />
+          <Route path="/login" element={<LoginForm/>} />
+          <Route path="/registro" element={<Registro/>} />
         </Routes>
       </div>
 

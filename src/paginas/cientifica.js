@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -52,7 +51,7 @@ function Cientifica() {
       <div className="container mx-auto mt-5">
         <div className="flex">
           <div className="w-1/2 p-4">
-            <div className="calculator rounded-md bg-blue-200 p-4">
+            <div className="calculator rounded-md bg-blue-200 p-4 shadow">
               <input
                 type="text"
                 className="form-control mb-3 bg-white"
@@ -79,7 +78,7 @@ function Cientifica() {
             </div>
           </div>
           <div className="w-1/2 p-4">
-            <div className="notes bg-yellow-200 rounded-md p-4">
+            <div className="notes bg-yellow-200 rounded-md p-4 shadow">
               <h2 className="text-2xl font-semibold mb-4">Notas</h2>
               <textarea
                 className="form-control h-64 bg-white"
