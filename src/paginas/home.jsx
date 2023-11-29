@@ -1,9 +1,25 @@
-import React, { useState } from "react";
 import { Card, Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 function Home() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = firebase.auth().onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const cardData = [
     {
       image: "./img/img2.png",
@@ -37,13 +53,18 @@ function Home() {
   return (
     <div className="bg-[#358ed3] min-h-screen">
       <br></br>
-
-      <div className="text-center text-white">
-        <h1 className="text-4xl font-bold mb-4 mt-5">¡BIENVENIDO A CALCUDRAW!</h1>
-        <p className="text-xl">
-          ¡Descubre la magia de los números! Elige una calculadora y haz las
-          matemáticas divertidas!
-        </p>
+<div className="text-center text-white">
+        <h1 className="text-4xl font-bold mb-4 mt-5">
+          ¡BIENVENIDO A CALCUDRAW!
+        </h1>
+        {user ? (
+          <p className="text-xl">¡Hola, {user.displayName}!</p>
+        ) : (
+          <p className="text-xl">
+            ¡Descubre la magia de los números! Elige una calculadora y haz las
+            matemáticas divertidas!
+          </p>
+        )}
       </div>
 
       <div className="container mx-auto mt-5">

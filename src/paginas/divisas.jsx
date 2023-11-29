@@ -57,7 +57,13 @@ const Divisas = () => {
       </header>
 
       <div className="container mt-4 mb-4">
-        <div className="card p-4" style={{ backgroundColor: "#f8f9fa", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
+        <div
+          className="card p-4"
+          style={{
+            backgroundColor: "#f8f9fa",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          }}
+        >
           <div className="card-body">
             <div className="text-center">
               <label className="text-primary text-2xl my-2 font-bold">

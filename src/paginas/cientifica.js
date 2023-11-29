@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
