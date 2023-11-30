@@ -11,7 +11,6 @@ import Divisas from './paginas/divisas';
 import Navbar from './componentes/navbar';
 import Footer from './componentes/footer';
 import Pizarra from './paginas/Pizarra';
-import CommentsApp from './paginas/jsonApi';
 import Libros from './paginas/libros';
 import YoutubeRepository from './paginas/tutorials'
 import Medidas from './paginas/medidas';
@@ -20,6 +19,7 @@ import AcercaDe from './paginas/acercaDe';
 import Login from './paginas/login';
 import LoginForm from './paginas/login';
 import Registro from './paginas/registro';
+import Comentarios from './paginas/jsonApi';
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           <Route path="/cientifica" element={<Cientifica />} /> 
           <Route path="/divisas" element={<Divisas />} /> 
           <Route path="/pizarra" element={<Pizarra />} />
-          <Route path="/jsonApi" element={<CommentsApp />} />
+          <Route path="/jsonApi" element={<Comentarios />} />
           <Route path="/libros" element={<Libros />} />
           <Route path="/tutorials" element={<YoutubeRepository />} />
           <Route path="/medidas" element={<Medidas/>} />

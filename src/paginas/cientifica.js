@@ -7,7 +7,6 @@ function Cientifica() {
   const [output, setOutput] = useState('');
   const [notas, setNotas] = useState('');
 
-
   const handleButtonClick = (value) => {
     switch (value) {
       case '=':
@@ -23,13 +22,13 @@ function Cientifica() {
         setOutput('');
         break;
       case 'sqrt':
-        setInput(`sqrt(${input})`);
+        setInput(Math.sqrt(input));
         break;
       case '^':
-        setInput(`${input}^`);
+        setInput(input ** 2);
         break;
       case 'sin':
-        setInput(`sin(${input})`);
+        setInput(Math.sin(input));
         break;
       default:
         setInput(input + value);
@@ -37,25 +36,52 @@ function Cientifica() {
   };
 
   const buttons = [
-    '(', ')', 'sqrt', '^',
-    'sin', 'cos', 'tan', 'ln',
-    'log', 'exp', 'pi', 'e',
-    '7', '8', '9', '+',
-    '4', '5', '6', '-',
-    '1', '2', '3', '*',
-    'C', '0', '=', '/',
+    '(',
+    ')',
+    'sqrt',
+    '^',
+    'sin',
+    'cos',
+    'tan',
+    'ln',
+    'log',
+    'exp',
+    'pi',
+    'e',
+    '7',
+    '8',
+    '9',
+    '+',
+    '4',
+    '5',
+    '6',
+    '-',
+    '1',
+    '2',
+    '3',
+    '*',
+    'C',
+    '0',
+    '=',
+    '/',
   ];
+
   const descargarNotas = () => {
-    const blob = new Blob([notas], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'notas.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    if (notas.trim() !== '') {
+      const blob = new Blob([notas], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'notas.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } else {
+      alert('No puedes descargar notas en blanco');
+    }
   };
+
   return (
     <div className="bg-[#f7f7f8] min-h-screen">
       <header className="bg-blue-900 text-white p-4">
@@ -96,8 +122,8 @@ function Cientifica() {
               <textarea
                 className="form-control h-64 bg-white"
                 placeholder="Toma tus notas aquí"
-              ></textarea>
-              <button onClick={descargarNotas} className="btn btn-light mt-2 ">
+              />
+              <button onClick={descargarNotas} className="btn btn-light mt-2">
                 Descargar
               </button>
             </div>

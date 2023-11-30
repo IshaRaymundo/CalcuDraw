@@ -2,28 +2,28 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 
-const CommentsApp = () => {
-  const [comments, setComments] = useState([]);
-  const [visibleComments, setVisibleComments] = useState(5);
+const Comentarios = () => {
+  const [com, setCom] = useState([]);
+  const [visibleCom, setVisibleCom] = useState(5);
 
   useEffect(() => {
-    const fetchComments = async () => {
+    const fetchCom = async () => {
       try {
         const response = await fetch(
           "https://jsonplaceholder.typicode.com/comments"
         );
         const data = await response.json();
-        setComments(data);
+        setCom(data);
       } catch (error) {
-        console.error("Error fetching comments:", error);
+        console.error("Error obteniendo comentarios:", error);
       }
     };
 
-    fetchComments();
+    fetchCom();
   }, []);
 
   const loadMoreComments = () => {
-    setVisibleComments((prevVisibleComments) => prevVisibleComments + 5);
+    setVisibleCom((prevVisibleCom) => prevVisibleCom + 5);
   };
 
   return (
@@ -33,8 +33,8 @@ const CommentsApp = () => {
         <p className="text-center text-secondary lead">
           ¡Bienvenido/a a nuestra aplicación! Aquí tienes algunas opiniones de otros usuarios sobre la aplicación.
         </p>
-        {comments.slice(0, visibleComments).map((comment) => (
-          <Card key={comment.id} className="mb-3 shadow-lg">
+        {com.slice(0, visibleCom).map((com) => (
+          <Card key={com.id} className="mb-3 shadow-lg">
             <div style={{ display: "flex" }}>
               <Card.Img
                 variant="top"
@@ -44,15 +44,15 @@ const CommentsApp = () => {
               />
               <Card.Body>
                 <Card.Subtitle className="text-muted">
-                  Usuario: {comment.email}
+                  Usuario: {com.email}
                 </Card.Subtitle>
-                <Card.Title>{comment.name}</Card.Title>
-                <Card.Text>{comment.body}</Card.Text>
+                <Card.Title>{com.name}</Card.Title>
+                <Card.Text>{com.body}</Card.Text>
               </Card.Body>
             </div>
           </Card>
         ))}
-        {visibleComments < comments.length && (
+        {visibleCom < com.length && (
           <div className="d-flex justify-content-center mt-3 mb-4">
             <Button variant="primary" onClick={loadMoreComments}>
               Ver más
@@ -64,4 +64,4 @@ const CommentsApp = () => {
   );
 };
 
-export default CommentsApp;
+export default Comentarios;
