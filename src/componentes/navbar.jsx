@@ -34,7 +34,7 @@ function Navbar() {
       </div>
       <div className="text-center font-semibold">
         <Link to="/cientifica" style={linkStyle} className="text-sm mx-4">
-          Matemática
+          Científica
         </Link>
         <Link to="/divisas" style={linkStyle} className="text-sm mx-4">
           Divisas

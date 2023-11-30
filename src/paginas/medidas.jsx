@@ -125,7 +125,7 @@ const Medidas = () => {
     <>
       <header className="bg-blue-900 text-white p-4">
         <h1 className="text-2xl font-semibold text-center">
-          CALCULADORA DE MEDIDAS
+          CONVERSOR DE MEDIDAS
         </h1>
       </header>
       <div className="container mt-4 mb-4">

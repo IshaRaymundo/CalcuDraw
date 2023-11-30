@@ -65,7 +65,10 @@ function Cientifica() {
     '=',
     '/',
   ];
-
+  const handleNotasChange = (event) => {
+    setNotas(event.target.value);
+  };
+  
   const descargarNotas = () => {
     if (notas.trim() !== '') {
       const blob = new Blob([notas], { type: 'text/plain' });
@@ -120,9 +123,11 @@ function Cientifica() {
             <div className="notes bg-yellow-200 rounded-md p-4 shadow">
               <h2 className="text-2xl font-semibold mb-4">Notas</h2>
               <textarea
-                className="form-control h-64 bg-white"
-                placeholder="Toma tus notas aquí"
-              />
+            className="form-control h-64 bg-white"
+            placeholder="Toma tus notas aquí"
+            value={notas}
+            onChange={handleNotasChange} 
+          />
               <button onClick={descargarNotas} className="btn btn-light mt-2">
                 Descargar
               </button>
