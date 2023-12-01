@@ -7,21 +7,21 @@ import "firebase/compat/auth";
 import { dbFirebase } from ".././db/firebase";
 import axios from "axios";
 
-const LoginForm = () => {
+const FormularioInicioSesion = () => {
   const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState("");
+  const [mensajeExito, setMensajeExito] = useState("");
 
-  const navigate = useNavigate();
+  const navegar = useNavigate();
 
-  const handleGoogleSignIn = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
+  const manejarInicioSesionConGoogle = () => {
+    const proveedor = new firebase.auth.GoogleAuthProvider();
 
     firebase
       .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        const user = result.user;
-        navigate("/");
+      .signInWithPopup(proveedor)
+      .then((resultado) => {
+        const usuario = resultado.user;
+        navegar("/");
       })
       .catch((error) => {
         console.error("Error al iniciar sesión con Google:", error);
@@ -42,13 +42,13 @@ const LoginForm = () => {
             <Button
               variant="light"
               className="w-100 mt-3 border"
-              onClick={handleGoogleSignIn}
+              onClick={manejarInicioSesionConGoogle}
               justifyContent="center"
             >
               <div className="d-flex align-items-center">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/012/871/371/non_2x/google-search-icon-google-product-illustration-free-png.png"
-                  alt="Google Icon"
+                  alt="Icono de Google"
                   className="w-6 h-6"
                 />
                 <span className="ml-2">Ingresa con Google</span>
@@ -68,4 +68,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default FormularioInicioSesion;
